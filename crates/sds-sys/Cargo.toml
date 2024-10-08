@@ -1,0 +1,11 @@
+[package]
+name = "sds-sys"
+version = "2.2.0"
+edition = "2021"
+
+[build-dependencies]
+bindgen = "0.70.1"
+cc = "1.1.28"
+
+[dev-dependencies]
+scopeguard = "1.2.0"

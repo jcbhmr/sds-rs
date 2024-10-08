@@ -1,14 +1,7 @@
-[package]
-name = "sds-rs"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+resolver = "2"
+members = ["crates/*"]
 
-[dependencies]
-libc = "0.2.159"
-
-[build-dependencies]
-bindgen = "0.70.1"
-cc = "1.1.28"
-
-[dev-dependencies]
-scopeguard = "1.2.0"
+[workspace.dependencies]
+sds = { path = "crates/sds", version = "0.1.0" }
+sds-sys = { path = "crates/sds-sys", version = "2.2.0" }
