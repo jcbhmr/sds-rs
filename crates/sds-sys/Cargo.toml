@@ -2,6 +2,7 @@
 name = "sds-sys"
 version = "2.2.0"
 edition = "2021"
+links = "sds"
 
 [build-dependencies]
 bindgen = "0.70.1"
