@@ -1,16 +1,16 @@
-# Simple Dynamic Strings
+# Simple Dynamic Strings Rust crate
 
 <table align=center><td>
 
 ```rs
 #[no_mangle]
 pub extern "C" fn my_data() -> c_sds {
-    SdString::from("He\0llo Alan\0 Turing!").into_raw()
+    SdsOwned::from("He\0llo Alan\0 Turing!").into_raw()
 }
 
 #[no_mangle]
-pub extern "C" fn my_free(data: *const std::ffi::c_char) {
-    let sds = unsafe { sds::Sds::from_raw(data) };
+pub extern "C" fn my_sdsfree(data: c_sds) {
+    let sds = unsafe { sds::SdsOwned::from_raw(data) };
     drop(sds);
 }
 ```
